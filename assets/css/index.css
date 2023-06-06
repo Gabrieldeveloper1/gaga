@@ -1,11 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
     font-family: 'Inconsolata', monospace;
+    color: var(--white);
 }
+
+:root {
+    --primary: #03FF77;
+    --secondary: #03FF4A;
+    --dark-bg: radial-gradient(100% 100% at 50% 100%, #1F1E1B 21.52%, #1B1A17 100%);
+    --light-bg: #242320;
+    --white: #fff;
+    --white-mod: #F0E3CA;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--dark-bg);
+
+}
+
+.navigation {
+    align-items: center;
+    box-shadow: 0 .1rem .5rem #000000a5;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+    transition: all .5s;
+    width: 100%;
+    z-index: 1
+}
+
+.navigation .logo {
+    color: var(--pink);
+    font-size: 1.7rem;
+    font-weight: 600
+}
+
+.logo span {
+    color: var(--dark-bg)
+}
+
+.navigation ul {
+    align-items: center;
+    display: flex;
+    gap: 2rem
+}
+
+.navigation ul li a {
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.5s
+}
+
+.navigation ul li a.active,
+.navigation ul li a:hover {
+    color: var(--primary)
+}
+
+.navigation i {
+    cursor: pointer;
+    font-size: 1.5rem
+}
+
+.menu {
+    cursor: pointer;
+    display: none
+}
+
+.menu .bar {
+    background: var(--dark);
+    border-radius: 3px;
+    display: block;
+    height: 3px;
+    margin: 5px auto;
+    transition: all .3s;
+    width: 28px
+}
+
+.menu .bar:first-child,
+.menu .bar:nth-child(3) {
+    background: var(--pink)
+}
+/* SECTION WELCOME */
+.welcome {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+.welcome-left {
+    text-align: justify;
+    
+}
+.welcome-right {
+    margin: 2% 0;
+  
+}
+
+/* WELCOME LEFT */
+.welcome-left .name-title {
+font-size: 4rem;
+font-weight: 900;
+line-height: 4rem;
+color: var(--secondary);
+padding-top: 11rem;
+
+}
+
+.welcome-left .web-function{
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-top: 1rem;
+}
+
+.welcome-left .welcome-paragraph{
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.313rem;  
+    padding-top: 1rem;
+
+}
+/* WELCOME RIGHT */
+
+.welcome-right  img {
+    width: 629px;
+    height: 575px;
+}
+/* ABOUT ME */
+.about {
+    display: flex;
+    height: 228.79px;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-left img {
+    margin-left: 13.103rem;
+}
+
+
+.about .about-paragraph{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5rem;  
+    margin-right: 12.603rem;
+}
+
+/* SKILLS */
+
+.skills{
+    display: flex;
+    flex-direction: column;
+}
+.skills .skills-title{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 2.125rem;
+    color: var(--secondary);
+}
+
+.cards-container{
+    display: flex;
+    justify-content: center;
+    height: 18.75rem;
+    margin: 0 10rem;
+    gap: 2rem;
+    margin-top: 5rem;
+    
+    
+
+}
+.cards-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+    width: 200px;
+    background: var(--light-bg); 
+    border-radius: 10px;  
+    transition: all 0.3s;
+}
+
+
+/* CARD ANIMATION */
+.cards-item svg path {
+    transition: all 0.3s;
+    fill: var(--white-mod);
+    transform-origin: center;
+}
+
+.cards-item:hover {
+    transform: scale(1.1);
+}
+
+.cards-item:hover svg path {
+    fill: var(--secondary); /* Cor verde desejada */
+}
+
+.cards-item h4{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.313rem;
+}
+
+
+
+/* MY PROJECTS */
+
+
+
+
 
