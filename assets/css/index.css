@@ -16,7 +16,9 @@
     --dark-bg: radial-gradient(100% 100% at 50% 100%, #1F1E1B 21.52%, #1B1A17 100%);
     --light-bg: #242320;
     --white: #fff;
+    --black: #000;
     --white-mod: #F0E3CA;
+    --bg-footer: #191817;
 
 }
 
@@ -34,7 +36,9 @@ html {
     padding: 18px 40px;
     transition: all .5s;
     width: 100%;
-    z-index: 1
+    z-index: 1;
+    position: fixed;
+    background: var(--dark-bg);
 }
 
 .navigation .logo {
@@ -55,8 +59,8 @@ html {
 
 .navigation ul li a {
     color: var(--white);
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     transition: all 0.5s
 }
 
@@ -76,7 +80,7 @@ html {
 }
 
 .menu .bar {
-    background: var(--dark);
+    background: var(--secondary);
     border-radius: 3px;
     display: block;
     height: 3px;
@@ -87,8 +91,9 @@ html {
 
 .menu .bar:first-child,
 .menu .bar:nth-child(3) {
-    background: var(--pink)
+    background: var(--white)
 }
+
 /* SECTION WELCOME */
 .welcome {
     display: flex;
@@ -96,99 +101,97 @@ html {
     justify-content: center;
     gap: 2rem;
 }
+
 .welcome-left {
     text-align: justify;
-    
-}
-.welcome-right {
-    margin: 2% 0;
-  
+
 }
 
 /* WELCOME LEFT */
 .welcome-left .name-title {
-font-size: 4rem;
-font-weight: 900;
-line-height: 4rem;
-color: var(--secondary);
-padding-top: 11rem;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 4rem;
+    color: var(--secondary);
+    padding-top: 11rem;
 
 }
 
-.welcome-left .web-function{
+.welcome-left .web-function {
     font-size: 2.5rem;
     font-weight: 700;
     padding-top: 1rem;
 }
 
-.welcome-left .welcome-paragraph{
+.welcome-left .welcome-paragraph {
     font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.313rem;  
+    line-height: 1.313rem;
     padding-top: 1rem;
 
 }
+
 /* WELCOME RIGHT */
 
-.welcome-right  img {
-    width: 629px;
+.welcome-right img {
+    width: 100%;
     height: 575px;
+    margin-top: 5rem;
 }
+
 /* ABOUT ME */
 .about {
     display: flex;
     height: 228.79px;
     gap: 2rem;
     align-items: center;
+    padding: 0 10rem;
 }
 
-.about-left img {
-    margin-left: 13.103rem;
-}
-
-
-.about .about-paragraph{
+.about .about-paragraph {
     font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1.5rem;  
-    margin-right: 12.603rem;
+    line-height: 1.5rem;
+    text-align: justify;
+
 }
 
 /* SKILLS */
 
-.skills{
+.skills {
     display: flex;
     flex-direction: column;
-}
-.skills .skills-title{
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 2.125rem;
-    color: var(--secondary);
+
+
 }
 
-.cards-container{
+.skills .skills-title {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--secondary);
+    margin: 5rem 0;
+}
+
+.cards-container {
     display: flex;
     justify-content: center;
-    height: 18.75rem;
-    margin: 0 10rem;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 5rem;
-    
-    
 
 }
-.cards-item{
+
+.cards-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    text-align: center;
     gap: 2rem;
+    height: 300px;
     width: 200px;
-    background: var(--light-bg); 
-    border-radius: 10px;  
+    background: var(--light-bg);
+    border-radius: 10px;
     transition: all 0.3s;
 }
 
@@ -205,10 +208,11 @@ padding-top: 11rem;
 }
 
 .cards-item:hover svg path {
-    fill: var(--secondary); /* Cor verde desejada */
+    fill: var(--secondary);
+    /* Cor verde desejada */
 }
 
-.cards-item h4{
+.cards-item h4 {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -218,9 +222,723 @@ padding-top: 11rem;
 
 
 
-/* MY PROJECTS */
+/* PROJECTS / PORTFOLIO*/
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    padding: 2rem;
+    gap: 5rem;
+
+}
+
+.portfolio .title-portfolio {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.portfolio .container-portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+
+.card-portfolio,
+.project-portfolio {
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.card-portfolio:hover,
+.project-portfolio:hover {
+    transform: scale(1.1);
+}
+
+
+.card-portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    background: var(--light-bg);
+}
+
+.card-portfolio h4 {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.card-portfolio .paragraph-portfolio-1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.portfolio span {
+    width: 190px;
+    height: 0px;
+    border: 1px solid #09A362;
+    margin: 0 4rem;
+
+}
+
+.card-portfolio .paragraph-portfolio-2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 17px;
+
+}
+
+.portfolio a {
+    padding: 12px 20px;
+    background: var(--dark-bg);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+    margin: 0 1rem;
+}
+
+.portfolio a:hover {
+    background: var(--secondary);
+    color: var(--black);
+}
+
+/* FOOTER */
+
+.container-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 4rem;
+    gap: 5rem;
+    background: var(--bg-footer);
+}
+
+/* FOOTER LEFT */
+.footer-left p {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.313rem;
+    width: 213px;
+    text-align: justify;
+}
+
+/* FOOTER RIGHT */
+.footer-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2.125rem;
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-item a {
+    font-size: 1.25rem;
+    transition: all.3s;
+    cursor: pointer;
+}
+
+.footer-item a:hover {
+    color: var(--secondary);
+}
+
+/* MEDIAS / RESPONSIVE */
+
+@media (max-width: 1024px) {
+
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+    /* SECTION WELCOME */
+    .welcome {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .welcome-left {
+        text-align: justify;
+
+    }
 
 
 
 
+    /* WELCOME LEFT */
+    .welcome-left .name-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 4rem;
+        color: var(--secondary);
+        padding-top: 11rem;
 
+    }
+
+
+    .welcome-left .web-function {
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding-top: 1rem;
+    }
+
+    .welcome-left .welcome-paragraph {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.313rem;
+        padding-top: 1rem;
+
+    }
+
+    /* WELCOME RIGHT */
+
+    .welcome-right img {
+        width: 100%;
+        height: 500px;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    /* ABOUT ME */
+    .about {
+        padding: 0 5rem;
+    }
+
+    .about .about-paragraph {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+
+
+}
+
+/*============================================================================*/
+/*=============================================================================*/
+@media (max-width: 800px) {
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+    /* SECTION WELCOME */
+    .welcome {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .welcome-left {
+        text-align: justify;
+        padding-left: 2.1rem;
+
+    }
+
+
+
+
+    /* WELCOME LEFT */
+    .welcome-left .name-title {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 4rem;
+        color: var(--secondary);
+        padding-top: 7rem;
+
+
+    }
+
+    .welcome-left .web-function {
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 0.5rem;
+    }
+
+    .welcome-left .welcome-paragraph {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.313rem;
+        padding-top: 1rem;
+
+
+    }
+
+
+
+    /* WELCOME RIGHT */
+
+    .welcome-right img {
+        width: 100%;
+        height: 500px;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    /* ABOUT ME */
+
+    .about {
+        padding: 0 3rem;
+    }
+
+
+    .about .about-paragraph {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+
+        text-align: justify;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+
+}
+
+/*============================================================================*/
+/*=============================================================================*/
+@media (max-width: 768px) {
+    .navigation {
+        padding: 18px 20px
+    }
+
+    .menu {
+        display: block
+    }
+
+    .menu.ativo .bar:first-child {
+        transform: translateY(8px) rotate(45deg)
+    }
+
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg)
+    }
+
+    .nav-menu {
+        background: var(--light-bg);
+        flex-direction: column;
+        gap: -10px;
+        height: 100%;
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        transition: .3s;
+        width: 100%;
+        z-index: 1;
+
+    }
+
+    .nav-menu.ativo {
+        right: 0
+    }
+
+    .nav-item {
+        margin: 16px 0
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .welcome-left {
+        text-align: center;
+
+    }
+
+
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    /* ABOUT ME */
+    .about {
+        padding: 0 2rem;
+    }
+
+    .about .about-paragraph {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+    /* SKILLS */
+
+    .cards-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        height: 250px;
+        width: 200px;
+        background: var(--light-bg);
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .cards-item svg {
+        width: 6rem;
+    }
+
+    .cards-item h4 {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 2.313rem;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .card-portfolio,
+    .project-portfolio {
+        width: 280px;
+        height: 280px;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .portfolio span {
+        width: 160px;
+        height: 0px;
+        border: 1px solid #09A362;
+        margin: 0 4rem;
+    }
+
+    .card-portfolio .paragraph-portfolio-2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 17px;
+
+    }
+}
+
+@media (max-width: 500px) {
+    .navigation {
+        padding: 18px 20px
+    }
+
+    .menu {
+        display: block
+    }
+
+    .menu.ativo .bar:first-child {
+        transform: translateY(8px) rotate(45deg)
+    }
+
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg)
+    }
+
+    .nav-menu {
+        background: var(--light-bg);
+        flex-direction: column;
+        gap: -10px;
+        height: 100%;
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        transition: .3s;
+        width: 100%;
+        z-index: 1;
+
+    }
+
+    .nav-menu.ativo {
+        right: 0
+    }
+
+    .nav-item {
+        margin: 16px 0
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .welcome-left {
+        text-align: center;
+        padding: 0 1rem;
+
+    }
+
+    .welcome-right {
+        padding: 0 1rem;
+    }
+
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    /* ABOUT ME */
+    .about {
+        display: flex;
+        flex-direction: column;
+        height: 228.79px;
+        gap: 2rem;
+
+
+    }
+
+    .about .about-paragraph {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1rem;
+
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+    /* SKILLS */
+    .skills {
+        margin-top: 10rem;
+    }
+
+    .cards-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        height: 250px;
+        width: 200px;
+        background: var(--light-bg);
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .skills .skills-title {
+        margin: 5rem 0;
+    }
+
+    .cards-item svg {
+        width: 6rem;
+    }
+
+    .cards-item h4 {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 2.313rem;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .card-portfolio,
+    .project-portfolio {
+        width: 280px;
+        height: 280px;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .portfolio span {
+        width: 160px;
+        height: 0px;
+        border: 1px solid #09A362;
+        margin: 0 4rem;
+    }
+
+    .card-portfolio .paragraph-portfolio-2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 17px;
+
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        padding: 4rem;
+        gap: 5rem;
+        background: var(--bg-footer);
+
+
+    }
+
+
+}
+
+@media (max-width: 325px) {
+
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .welcome-left {
+        text-align: center;
+        padding: 0 1rem;
+
+    }
+
+    .welcome-right {
+        padding: 0 1rem;
+        
+    }
+    .welcome-right img {
+        width: 100%;
+        height: 300px;
+        margin-top: 0;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    /* ABOUT ME */
+    .about {
+        display: flex;
+        flex-direction: column;
+        height: 228.79px;
+        gap: 2rem;
+
+
+    }
+
+    .about .about-paragraph {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1rem;
+
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+
+    /* SKILLS */
+    .skills {
+        margin-top: 10rem;
+    }
+
+    .cards-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        height: 250px;
+        width: 200px;
+        background: var(--light-bg);
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .skills .skills-title {
+        margin: 5rem 0;
+    }
+
+    .cards-item svg {
+        width: 6rem;
+    }
+
+    .cards-item h4 {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 2.313rem;
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .card-portfolio,
+    .project-portfolio {
+        width: 280px;
+        height: 280px;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .portfolio span {
+        width: 160px;
+        height: 0px;
+        border: 1px solid #09A362;
+        margin: 0 4rem;
+    }
+
+    .card-portfolio .paragraph-portfolio-2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 17px;
+
+    }
+
+    /*============================================================================*/
+    /*=============================================================================*/
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        padding: 4rem;
+        gap: 5rem;
+        background: var(--bg-footer);
+
+
+    }
+
+
+}
